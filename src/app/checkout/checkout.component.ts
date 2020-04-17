@@ -64,6 +64,10 @@ export class CheckoutComponent implements OnInit {
     }    
   }
   checkoutCart(){
+    if(this.delivery_address == ""){
+      alert("Delivery address should not be empty");
+      return;
+    }
     if(this.pay_type == "cash_on_delivery"){
       let request = {
         "total_price":this.cartTotalPrice,
